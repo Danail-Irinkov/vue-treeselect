@@ -135,9 +135,12 @@
         }
         case KEY_CODES.ENTER: {
           evt.preventDefault()
-          const current = instance.getNode(instance.menu.current)
-          if (current.isBranch && instance.disableBranchNodes) return
-          instance.select(current)
+          let current = instance.getNode(instance.menu.current)
+            if (current.isBranch && instance.disableBranchNodes) {
+                var next = instance.visibleOptionIds.indexOf(instance.menu.current) + 1;
+                current = instance.getNode(instance.visibleOptionIds[next])
+            }
+            instance.select(current)
           break
         }
         case KEY_CODES.ESCAPE: {
