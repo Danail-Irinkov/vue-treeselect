@@ -1,5 +1,5 @@
 /*!
- * vue-treeselect v0.0.38 | (c) 2017-2019 Riophae Lee
+ * vue-treeselect v0.4.0 | (c) 2017-2019 Riophae Lee
  * Released under the MIT License.
  * https://vue-treeselect.js.org/
  */
@@ -74,6 +74,9 @@
 .vue-treeselect {
   position: relative;
   text-align: left;
+}
+[dir="rtl"] .vue-treeselect {
+  text-align: right;
 }
 .vue-treeselect div,
 .vue-treeselect span {
@@ -166,11 +169,18 @@
 .vue-treeselect--focused.vue-treeselect--searchable .vue-treeselect__single-value {
   color: #bdbdbd;
 }
+.vue-treeselect--disabled .vue-treeselect__single-value {
+  position: static;
+}
 .vue-treeselect__multi-value-item-container {
   display: inline-block;
   padding-top: 5px;
   padding-right: 5px;
   vertical-align: top;
+}
+[dir="rtl"] .vue-treeselect__multi-value-item-container {
+  padding-right: 0;
+  padding-left: 5px;
 }
 .vue-treeselect__multi-value-item {
   cursor: pointer;
@@ -217,6 +227,10 @@
   border-left: 1px solid #fff;
   line-height: 0;
 }
+[dir="rtl"] .vue-treeselect__value-remove {
+  border-left: 0 none;
+  border-right: 1px solid #fff;
+}
 .vue-treeselect__multi-value-item:hover .vue-treeselect__value-remove {
   color: #e53935;
 }
@@ -241,6 +255,10 @@
   padding-top: 5px;
   padding-right: 5px;
   vertical-align: top;
+}
+[dir="rtl"] .vue-treeselect__limit-tip {
+  padding-right: 0;
+  padding-left: 5px;
 }
 .vue-treeselect__limit-tip-text {
   cursor: default;
@@ -272,6 +290,10 @@
 .vue-treeselect--searchable.vue-treeselect--multi.vue-treeselect--has-value .vue-treeselect__input-container {
   padding-top: 5px;
   padding-left: 0;
+}
+[dir="rtl"] .vue-treeselect--searchable.vue-treeselect--multi.vue-treeselect--has-value .vue-treeselect__input-container {
+  padding-left: 5px;
+  padding-right: 0;
 }
 .vue-treeselect--disabled .vue-treeselect__input-container {
   display: none;
@@ -410,56 +432,128 @@
 .vue-treeselect__indent-level-0 .vue-treeselect__option {
   padding-left: 5px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-0 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .vue-treeselect__indent-level-0 .vue-treeselect__tip {
   padding-left: 25px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-0 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 25px;
 }
 .vue-treeselect__indent-level-1 .vue-treeselect__option {
   padding-left: 25px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-1 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 25px;
+}
 .vue-treeselect__indent-level-1 .vue-treeselect__tip {
   padding-left: 45px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-1 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 45px;
 }
 .vue-treeselect__indent-level-2 .vue-treeselect__option {
   padding-left: 45px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-2 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 45px;
+}
 .vue-treeselect__indent-level-2 .vue-treeselect__tip {
   padding-left: 65px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-2 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 65px;
 }
 .vue-treeselect__indent-level-3 .vue-treeselect__option {
   padding-left: 65px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-3 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 65px;
+}
 .vue-treeselect__indent-level-3 .vue-treeselect__tip {
   padding-left: 85px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-3 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 85px;
 }
 .vue-treeselect__indent-level-4 .vue-treeselect__option {
   padding-left: 85px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-4 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 85px;
+}
 .vue-treeselect__indent-level-4 .vue-treeselect__tip {
   padding-left: 105px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-4 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 105px;
 }
 .vue-treeselect__indent-level-5 .vue-treeselect__option {
   padding-left: 105px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-5 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 105px;
+}
 .vue-treeselect__indent-level-5 .vue-treeselect__tip {
   padding-left: 125px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-5 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 125px;
 }
 .vue-treeselect__indent-level-6 .vue-treeselect__option {
   padding-left: 125px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-6 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 125px;
+}
 .vue-treeselect__indent-level-6 .vue-treeselect__tip {
   padding-left: 145px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-6 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 145px;
 }
 .vue-treeselect__indent-level-7 .vue-treeselect__option {
   padding-left: 145px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-7 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 145px;
+}
 .vue-treeselect__indent-level-7 .vue-treeselect__tip {
   padding-left: 165px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-7 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 165px;
 }
 .vue-treeselect__indent-level-8 .vue-treeselect__option {
   padding-left: 165px;
 }
+[dir="rtl"] .vue-treeselect__indent-level-8 .vue-treeselect__option {
+  padding-left: 5px;
+  padding-right: 165px;
+}
 .vue-treeselect__indent-level-8 .vue-treeselect__tip {
   padding-left: 185px;
+}
+[dir="rtl"] .vue-treeselect__indent-level-8 .vue-treeselect__tip {
+  padding-left: 5px;
+  padding-right: 185px;
 }
 .vue-treeselect__option {
   padding-left: 5px;
@@ -502,6 +596,10 @@
   -ms-transform: rotate(-90deg);
       transform: rotateZ(-90deg);
 }
+[dir="rtl"] .vue-treeselect__option-arrow {
+  -ms-transform: rotate(90deg);
+      transform: rotateZ(90deg);
+}
 .vue-treeselect__option-arrow-container:hover .vue-treeselect__option-arrow,
 .vue-treeselect--branch-nodes-disabled .vue-treeselect__option:hover .vue-treeselect__option-arrow {
   color: #616161;
@@ -510,9 +608,17 @@
   -ms-transform: rotate(0);
       transform: rotateZ(0);
 }
+[dir="rtl"] .vue-treeselect__option-arrow--rotated {
+  -ms-transform: rotate(0);
+      transform: rotateZ(0);
+}
 .vue-treeselect__option-arrow--rotated.vue-treeselect__option-arrow--prepare-enter {
   -ms-transform: rotate(-90deg) !important;
       transform: rotateZ(-90deg) !important;
+}
+[dir="rtl"] .vue-treeselect__option-arrow--rotated.vue-treeselect__option-arrow--prepare-enter {
+  -ms-transform: rotate(90deg) !important;
+      transform: rotateZ(90deg) !important;
 }
 .vue-treeselect__label-container {
   display: table-cell;
@@ -686,10 +792,18 @@
   vertical-align: middle;
   cursor: inherit;
 }
+[dir="rtl"] .vue-treeselect__label {
+  padding-left: 0;
+  padding-right: 5px;
+}
 .vue-treeselect__count {
   margin-left: 5px;
   font-weight: 400;
   opacity: 0.6;
+}
+[dir="rtl"] .vue-treeselect__count {
+  margin-left: 0;
+  margin-right: 5px;
 }
 .vue-treeselect__tip {
   padding-left: 5px;
@@ -702,11 +816,12 @@
 .vue-treeselect__tip-text {
   display: table-cell;
   vertical-align: middle;
+  padding-left: 5px;
+  padding-right: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
-  padding-left: 5px;
   font-size: 12px;
 }
 .vue-treeselect__error-tip .vue-treeselect__retry {
@@ -717,6 +832,10 @@
   text-decoration: none;
   color: #039be5;
 }
+[dir="rtl"] .vue-treeselect__error-tip .vue-treeselect__retry {
+  margin-left: 0;
+  margin-right: 5px;
+}
 .vue-treeselect__icon-container {
   display: table-cell;
   vertical-align: middle;
@@ -726,6 +845,10 @@
 }
 .vue-treeselect--single .vue-treeselect__icon-container {
   padding-left: 5px;
+}
+[dir="rtl"] .vue-treeselect--single .vue-treeselect__icon-container {
+  padding-left: 0;
+  padding-right: 5px;
 }
 .vue-treeselect__icon-warning {
   display: block;
