@@ -87,10 +87,11 @@
 
       onBlur() {
         const { instance } = this
+        const menu = instance.getMenu()
 
         // #15
         // istanbul ignore next
-        if (document.activeElement === instance.$refs.menu) {
+        if (menu && document.activeElement === menu) {
           return this.focus()
         }
 
@@ -137,7 +138,7 @@
           evt.preventDefault()
           let current = instance.getNode(instance.menu.current)
             if (current.isBranch && instance.disableBranchNodes) {
-                var next = instance.visibleOptionIds.indexOf(instance.menu.current) + 1;
+                let next = instance.visibleOptionIds.indexOf(instance.menu.current) + 1;
                 current = instance.getNode(instance.visibleOptionIds[next])
             }
             instance.select(current)
